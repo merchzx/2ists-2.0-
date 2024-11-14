@@ -194,6 +194,18 @@ void List::show() const
 	cout << endl;
 }
 
+List& List::operator+(List& obj)
+{
+	this->tail->next = obj.head;
+	return*this;
+}
+
+List* List::operator*(List& obj)
+{
+	List temp;
+	return nullptr;
+}
+
 void List::clear()
 {
 	Node* current = head;

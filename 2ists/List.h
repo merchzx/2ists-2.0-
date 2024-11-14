@@ -46,5 +46,7 @@ public:
 	int back()const;
 	int front()const;
 	void show() const;
+	List& operator+(List&obj);
+	List* operator*(List& obj);
 	void clear();
 };

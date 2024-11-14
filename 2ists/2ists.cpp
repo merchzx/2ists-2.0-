@@ -9,7 +9,7 @@ bool func(int value) {
 	return value> 5;
 }
 
-bool func(int value) {
+bool func1(int value) {
 	return value < 5;
 }
 
@@ -19,13 +19,12 @@ int main()
 	list.push_back(10);
 	list.push_back(12);
 	list.push_back(13);
-	list.push_back(0);
-	list.push_back(0);
-	list.push_back(0);
-	list.insert(0, 7);
-	list.replace(0, 1);
-	bool(*fptr)(int value) = func;
-	list.show();
+	List list2;
+	list2.push_back(1);
+	list2.push_back(2);
+	list2.push_back(3);
+	List list3 = list + list2;
+	list3.show();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
