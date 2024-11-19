@@ -60,6 +60,55 @@ List::List(const List& obj)
 	}
 }
 
+void List::pop_back() {
+	if (!tail) return;
+
+	Node* to_delete = tail;
+	if (tail->prev) {
+		tail = tail->prev;
+		tail->next = nullptr;
+	}
+	else {
+		head = tail = nullptr;
+	}
+	delete to_delete;
+	size--;
+}
+
+void List::pop_front() {
+	if (!head) return;
+
+	Node* to_delete = head;
+	if (head->next) {
+		head = head->next;
+		head->prev = nullptr;
+	}
+	else {
+		head = tail = nullptr;
+	}
+	delete to_delete;
+	size--;
+}
+
+void List::reverse() {
+	if (!head) return;
+
+	Node* current = head;
+	Node* temp = nullptr;
+	tail = head;
+
+	while (current) {
+		temp = current->prev;
+		current->prev = current->next;
+		current->next = temp;
+		current = current->prev;
+	}
+
+	if (temp) {
+		head = temp->prev;
+	}
+}
+
 List::~List()
 {
 	Node* current = head;

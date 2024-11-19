@@ -46,6 +46,9 @@ public:
 	int back()const;
 	int front()const;
 	void show() const;
+	void pop_back();
+	void pop_front();
+	void reverse();
 	List& operator+(List&obj);
 	List* operator*(List& obj);
 	void clear();
